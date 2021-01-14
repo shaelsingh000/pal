@@ -1,0 +1,92 @@
+
+{% extends 'base.html'%}
+{% load avatar_tags %}
+{% block content %}
+<style>
+    .form-signin-profile{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    border: 5px solid white;
+    border-radius: 20px;
+    background-color:#0a0000;
+    }
+    .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    }
+    
+    .h3{
+        text-align: center;
+    }
+    .container{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .blog-posts{
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+    #user_avatar
+    {
+        border-radius: 50%;
+    }
+    h1
+    {
+        color: white;
+    }
+    h3#bio{
+        color:white;
+        text-decoration: underline;
+    }
+    #inputbio
+    {
+        font-family: cursive;
+    }
+    p
+    {
+        color: white;
+    }
+    pre{
+        font-size: large;
+    }
+    hr{
+        color: white;
+    }
+</style>
+<main class="form-signin-profile">
+    <form method="POST">
+        {% csrf_token %}
+        <center>
+            {% avatar account_form.email class="img-circle" id="user_avatar"%}</center>
+        <h1 class="h3 mb-3 fw-normal">Account</h1>
+        <hr>
+        <p>{{account_form.username}}<br>
+        {{account_form.email}}</p><hr>
+        <H3 id="bio">BIO:</H3>
+        <pre><p>{{account_form.bio}}</p></pre><hr>
+</main>
+<hr>
+<div class="container mt-4 p-4">
+    <div class='row'>
+        <div class='blog-posts'>
+            <h3 class="mb-3 font-weight-normal">Blog Posts:</h3>
+            {% if blog_posts %}
+            <ul>
+                {% for post in blog_posts %}
+                    <a href="{% url 'blog:detail' post.slug %}" style="text-decoration: none;">
+                        <li class="list-group-item">{{post}}</li>
+                    </a>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
