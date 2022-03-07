@@ -1,0 +1,206 @@
+{% extends "postman/base.html" %}
+{% load i18n postman_tags %}{% load pagination_tags %}{% comment %}{% load avatar_tags %}
+WARNING: 'pagination_tags' is a name from the dj-pagination application.
+For convenience, the design of this template is done with the use of that application.
+Django-postman will still be working, even if that application is not installed, by providing a mock
+for the template tag library.
+If the real implementation is to be used, just make sure that 'dj_pagination' is declared before 'postman'
+in the INSTALLED_APPS setting.
+{% endcomment %}
+{% block content %}
+{% load avatar_tags %}
+<style>
+   .container{
+      width: 75%;
+      border:1px solid #b6b5b5;
+   }
+   .tab2 {
+     float: right;
+     background-color: white;
+     width: 15%;
+    
+   }
+   
+   /* Style the buttons inside the tab */
+   .tab2 button {
+     display: block;
+     background-color: white;
+     color: rgb(121, 120, 120);
+     width: 100%;
+     border: none;
+     outline: none;
+     text-align: right;
+     cursor: pointer;
+     transition: 0.3s;
+     font-size: 15px;
+   }
+   
+   /* Change background color of buttons on hover */
+   .tab2 button:hover {
+     background-color: rgb(250, 246, 246);
+     color: black;
+     font-weight: bolder;
+     transition: 0.5s;
+   }
+   
+   /* Create an active/current "tab button" class */
+   .tab2 button.active {
+     background-color: #ccc;
+   }
+
+   .table{
+
+      width: 100%;
+      table-layout: fixed;
+   }
+   .table td{
+      overflow-wrap: break-word;
+      margin: 10px;
+   }
+   .inbox_folder_dp{
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+   }
+   .pm_date{
+      float: right;
+      color: rgb(165, 164, 164);
+      font-size: small;
+   }
+   
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: auto;
+  left: 0;
+  background-color: rgb(252, 250, 250); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(60, 94, 245);;
+  color: rgb(250, 248, 248);
+  padding: 10px 15px;
+  font-weight: bolder;
+  border: 2px solid white;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+<script>
+  function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+<div id="mySidebar" class="sidebar">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <a href="{% url 'messages:write' %}">Compose</a>
+   <a href="{% url 'messages:inbox' %}">Recieved</a>
+   <a href="{% url 'messages:sent' %}">Sent</a>
+   <a href="{% url 'messages:archives' %}">Archive</a>
+   <a href="{% url 'messages:trash' %}">Trash</a>
+</div>
+ 
+<div id="main">
+   <button class="openbtn" onclick="openNav()">&#9776;Inbox</button>
+<div class="tab2">
+   <form action="{% block pm_form_action %}{% endblock %}" method="post">{% csrf_token %}
+    {% block pm_form_buttons %}<span id="pm_buttons">
+    {% block pm_delete_button %}<button type="submit" class="pm_btn pm_btn-delete" onclick="this.form.action='{% url 'postman:delete' %}'">{% trans "Delete" %}</button>{% endblock %}
+    {% block pm_archive_button %}<button type="submit" class="pm_btn pm_btn-archive" onclick="this.form.action='{% url 'postman:archive' %}'">{% trans "Archive" %}</button>{% endblock %}
+    {% block pm_undelete_button %}<button type="submit" class="pm_btn pm_btn-undelete" onclick="this.form.action='{% url 'postman:undelete' %}'">{% trans "Undelete" %}</button>{% endblock %}
+    {% block pm_read_button %}<button type="submit" class="pm_btn pm_btn-read" onclick="this.form.action='{% url 'postman:mark-read' %}'">{% trans "Mark as read" %}</button>{% endblock %}
+    {% block pm_unread_button %}<button type="submit" class="pm_btn pm_btn-unread" onclick="this.form.action='{% url 'postman:mark-unread' %}'">{% trans "Mark as unread" %}</button>{% endblock %}
+    </span>{% endblock %}
+</div>
+{% autopaginate pm_messages %}
+{% if invalid_page %}
+<p>{% trans "Sorry, this page number is invalid." %}</p>
+{% else %}
+{% if pm_messages %}
+
+<table id="pm_messages" class="table table-borderless">
+ <thead>
+  <tr>
+      <th>{% trans "Sender" %}</th>
+      <th>{% trans "Subject" %}</th>
+  </tr>
+</thead>
+<tbody>
+   {% for message in pm_messages %}
+   <tr>
+      <td><span>
+          <input type="checkbox" {% if by_conversation and message.thread_id %}name="tpks" value="{{ message.thread_id }}"{% else %}name="pks" value="{{ message.pk }}"{% endif %}>
+         <a class="profile_link" href="{% url 'other_account' user %}">{% avatar message.sender class="inbox_folder_dp" %}</a>
+       {{ message.obfuscated_sender }}</span><span style="float: right;">{% if message.count %}({{ message.count }}){% endif %}</span></td>
+      <td style="overflow: hidden;">{% if message.is_new %}<strong>{% endif %}{% if message.is_replied %}<em>{% endif %}
+      {% block pm_subject %}
+         <a href="{% if by_conversation and message.thread_id %}{% url 'postman:view_conversation' message.thread_id %}{% else %}{% url 'postman:view' message.pk %}{% endif %}?next={{ current_url|urlencode }}">
+         {% include "postman/inc_subject_ex.html" %}</a>
+      {% endblock %}
+   {% if message.is_replied %}</em>{% endif %}
+   {% if message.is_new %}</strong>{% endif %}</td>
+   <td style="width: 50px;" class="pm_date">{{ message.sent_at|compact_date:_("g:i A,M j,n/j/y") }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+</form>
+{% paginate %}
+{% else %}
+<p>{% trans "No messages." %}</p>
+{% endif %}
+{% endif %}
+{% block pm_footer_info %}{% endblock %}
+</div>
+</div>
+{% endblock content %}

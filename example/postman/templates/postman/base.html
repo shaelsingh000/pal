@@ -1,0 +1,26 @@
+{% extends "base.html" %}{# not myself but a site-level one (TEMPLATE_DIRS setting) #}
+{% load i18n static %}{% load postman_tags %}
+{% block title %}{% trans "Messaging" %}{% endblock %}
+{% block extrahead %}{{ block.super }}
+<link type="text/css" media="all" rel="stylesheet" href="{% static 'postman/css/postman.css' %}">
+{% endblock %}
+{% block postman_menu %}
+<style>
+.container{
+    width: inherit;
+    background: white;
+    height: 80hv;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+.tablinks{
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
+}
+  
+</style>
+  
+
+{% endblock %}

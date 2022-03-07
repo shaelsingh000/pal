@@ -4,8 +4,24 @@ from django.http import HttpResponse
 from .models import BlogPost
 from .forms import CreateBlogPostForm, UpdateBlogPostForm
 from account.models import Account
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
+def BlogPostLike(request, slug):
 
+	context = {}
+	blog_post = get_object_or_404(BlogPost, slug=slug)  
+	liked = False  
+	if blog_post.likes.filter(username=request.user.username).exists():
+		blog_post.likes.remove(request.user)
+	else:
+		blog_post.likes.add(request.user)
+	if blog_post.likes.filter(username=request.user.username).exists():
+		liked = True
+	
+	context={'blog_post': blog_post,'number_of_likes':blog_post.number_of_likes(), 'post_is_liked':liked}
+
+	return render(request, 'blog/detail_blog.html', context)
 def create_blog_view(request):
 
 	context = {}
@@ -19,12 +35,13 @@ def create_blog_view(request):
 		obj = form.save(commit=False)
 		author = Account.objects.filter(email =request.user.email).first()
 		obj.author = author
-		obj.save()
 		form = CreateBlogPostForm()
+		obj.save()
 
 	context['form'] = form
 
 	return render(request, 'blog/create_blog.html', context)
+
 
 
 
@@ -33,8 +50,8 @@ def detail_blog_view(request, slug):
 	context = {}
 	blog_post = get_object_or_404(BlogPost, slug=slug)
 	context['blog_post'] = blog_post
-
 	return render(request, 'blog/detail_blog.html', context)
+	
 
 
 
@@ -84,5 +101,5 @@ def get_blog_queryset(query=None):
 		for post in posts:
 			queryset.append(post)
 
-	# create unique set and then convert to list
 	return list(set(queryset)) 
+

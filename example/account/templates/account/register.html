@@ -43,11 +43,15 @@
 <main class="form-signin">
     <form method="POST">
       {% csrf_token %}
-      <h1 class="h3 mb-3 fw-normal">Register An Account</h1>
-      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-      <input type="password" name="password1" id="inputPassword1" class="form-control" placeholder="Password" required>
-      <input type="password" name="password2" id="inputPassword2" class="form-control" placeholder="Confirm Password" required>
+      <h1 class="h3 mb-3 fw-normal d-flex justify-content-center">Register</h1>
+      Email<br>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+        Username<br>
+      <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus><br>
+      Password<br>
+      <input type="password" name="password1" id="inputPassword1" class="form-control" placeholder="Password" required><br>
+      Confirm Password<br>
+      <input type="password" name="password2" id="inputPassword2" class="form-control" placeholder="Confirm Password" required><br>
         {% for field in registration_form %}
             <p>
                 {% for error in field.errors %}

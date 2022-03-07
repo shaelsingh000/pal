@@ -1,3 +1,4 @@
+{% load avatar_tags %}
 <style type="text/css">
 	.card{
 		max-width: 700px;
@@ -11,13 +12,27 @@
 		font-weight: bold;
 		text-decoration: none;
 	}
+	.dp
+    {
+        border-radius: 50%;
+		height: 60px;
+		width: 60px;
+		margin-right: 15px;
+    }
+	img{
+		height: 500px;
+		width: 500px;
+	}
 </style>
 {% if blog_post %}
-<div class="container">
 	<div class="row">
 
 		<!-- Blog Post -->
+
 		<div class="card m-auto">
+			<div class="card">
+				<p><a class='post_links' href="{% url 'other_account' blog_post.author.username %}">{% avatar blog_post.author.email class="dp"%}{{blog_post.author.username}}</a>
+			</div>
 			<a class='post_links' href="{% url 'blog:detail' post.slug %}">
 				<img class="card-img-top" src="{{blog_post.image.url}}">
 			</a>
@@ -32,14 +47,13 @@
 				{% endif %}
 			</div>
 			<div class="card-footer text-muted">
-			  Updated on {{blog_post.date_updated}} by <a class='post_links' href="{% url 'other_account' blog_post.author.username %}">{{blog_post.author.username}}</a>
+			
+			  Updated on {{blog_post.date_updated}}
 			</div>
         </div>
         
 	</div>
-</div>
 {% else %}
-<div class="container">
 	<div class="row">
 		<div class="card m-auto">
 			<div class="card-body mt-2 mb-2">
@@ -48,5 +62,4 @@
 			</div>
 		</div>
 	</div>
-</div>
 {% endif %}

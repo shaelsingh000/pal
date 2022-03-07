@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'blog',
     'django_extensions',
     'avatar',
+    'tinymce',
+    'postman',
 
 ]
 
@@ -114,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'ASIA/kolkata'
 
 USE_I18N = True
 
@@ -140,3 +142,30 @@ CHAT_WS_SERVER_PORT = 5002
 CHAT_WS_SERVER_PROTOCOL = 'ws'
 
 AVATAR_MAX_SIZE = 10240*1024
+
+def get_params_email(context):
+    return {
+        'reply_to': ['shaelsingh000@gmail.com'],
+        'headers': {'X-my-choice': 'my-value'}
+    } if context['action'] == 'acceptance' else {}
+POSTMAN_PARAMS_EMAIL = get_params_email
+
+POSTMAN_I18N_URLS = True  # default is False
+POSTMAN_DISALLOW_ANONYMOUS = True  # default is False
+POSTMAN_DISALLOW_MULTIRECIPIENTS = True  # default is False
+POSTMAN_DISALLOW_COPIES_ON_REPLY = True  # default is False
+POSTMAN_DISABLE_USER_EMAILING = True  # default is False
+POSTMAN_FROM_EMAIL = 'shaelsingh000@gmail.com'  # default is DEFAULT_FROM_EMAIL
+POSTMAN_PARAMS_EMAIL = get_params_email  # default is None
+POSTMAN_AUTO_MODERATE_AS = True  # default is None
+POSTMAN_SHOW_USER_AS = 'username'  # default is None
+POSTMAN_NAME_USER_AS = 'username'  # default is None
+POSTMAN_QUICKREPLY_QUOTE_BODY = False  # default is False
+POSTMAN_NOTIFIER_APP = None  # default is 'notification'
+POSTMAN_MAILER_APP = None  # default is 'mailer'
+# POSTMAN_AUTOCOMPLETER_APP = {
+    # 'name': '',  # default is 'ajax_select'
+    # 'field': '',  # default is 'AutoCompleteField'
+    # 'arg_name': '',  # default is 'channel'
+    # 'arg_default': 'postman_friends',  # no default, mandatory to enable the feature
+# }  # default is {}

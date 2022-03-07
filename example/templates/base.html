@@ -6,26 +6,24 @@
 	<title>Welcome PAL</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<hr>
+	{% block extrahead %}{% endblock %}
+	{% include 'snippets/tinymce.html' %}
 	{% include 'snippets/header.html' %}
 	{% include 'snippets/base_css.html' %}
 </head>
 
-<body>
-	<style type="text/css">
-		.main{
-			min-height: 100vh;
-			height: 100%;
-		}
-	</style>
-	<div class="main">
+<body style="background-image: url('a.jpg');">
+	
+	<div class="container">
+	
 		{% block css %}{% endblock css %}
+		{% block postman_menu %}{% endblock %}
 		{% block content%}
 		{% endblock content%}
+		
 		{% block extra_js %}{% endblock extra_js %}
+
 	</div>
-	
 	{% include 'snippets/footer.html' %}
 </body>
 </html>

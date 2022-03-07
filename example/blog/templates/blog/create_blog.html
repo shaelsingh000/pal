@@ -17,8 +17,6 @@
 		  background-color: rgb(247, 130, 212);
 	  }
 </style>
-
-<div class="container">
 	<div class="row">
 		<div class="col-lg-7 offset-lg-1">
 			<form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
@@ -32,7 +30,7 @@
 				<!-- Body -->
 				<div class="form-group">
 					<label for="id_body">Content</label>
-					<textarea class="form-control" rows="10" type="text" name="body" id="id_body" placeholder="This blog is about..." required></textarea>
+					<textarea class="form-control" rows="10" type="text" name="body" id="my_textarea" placeholder="This blog is about..." required></textarea>
 				</div>
 
 				<!-- Image -->
@@ -46,7 +44,6 @@
 			</form>	
 		</div>
 	</div>
-</div>
 
 
 

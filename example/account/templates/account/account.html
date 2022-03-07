@@ -3,14 +3,14 @@
 {% load avatar_tags %}
 {% block content %}
 <style>
-    .form-signin {
+    .form-signin-profile {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: auto;
-    border: 5px solid white;
+    border: 5px solid rgb(252, 250, 250);
     border-radius: 20px;
-    background-color:#0a0000;
+    background-color:white;
     }
     .form-signin .form-control {
     position: relative;
@@ -34,9 +34,11 @@
         text-align: center;
     }
     .container{
-        height: 100%;
         justify-content: center;
         align-items: center;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 80vh;
     }
     .blog-posts{
         max-width: 500px;
@@ -46,30 +48,31 @@
     #user_avatar
     {
         border-radius: 50%;
+        height: 100px;
+        width: 100px;
     }
     h1
     {
-        color: white;
+        color: rgb(8, 0, 0);
     }
     .form-control
     {
-        background-color: #0a0000;
-        color: white;
+        background-color: #fcfafa;
+        color: rgb(8, 0, 0);
         border:#0a0000;
     }
     h3#bio{
-        color:white;
+        color:rgb(5, 0, 0);
     }
     #inputbio
     {
         font-family: cursive;
     }
-    hr{
-        color:white;
-    }
+    
     
 </style>
-<main class="form-signin">
+<div class="container">
+<main class="form-signin-profile card">
     <form method="POST">
         {% csrf_token %}
         <center>
@@ -78,8 +81,7 @@
         <hr>
         <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" value="{{account_form.initial.username}}" required>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required value="{{account_form.initial.email}}"><hr>
-        <H3 id="bio">BIO:</H3>
-        <textarea type="text" name="bio" id="inputbio" class="form-control" placeholder="bio" rows="10">{{account_form.initial.bio}}</textarea><hr
+        <textarea id=" " type="text" name="bio" id="inputbio" class="form-control" placeholder="bio" rows="10">{{account_form.initial.bio}}</textarea><hr
         {% for field in account_form %}
             <p>
                 {% for error in field.errors %}
@@ -99,25 +101,20 @@
     </form>
 </main>
 <hr>
-<div class="container mt-4 p-4">
-    <div class='row'>
-        <div class='blog-posts'>
-            <h3 class="mb-3 font-weight-normal">Blog Posts:</h3>
-            {% if blog_posts %}
-            <ul>
-                {% for post in blog_posts %}
-                    <a href="{% url 'blog:detail' post.slug %}" style="text-decoration: none;">
-                        <li class="list-group-item">{{post}}</li>
-                    </a>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>You have no blog posts. Create a post <a href="{% url 'blog:create'%}">here</a></p>
-            {% endif %}
-        </div>
-    </div>
-</div>
+<h3 class="mb-3 text-center">Blog Posts</h3><hr>
+    {% if blog_posts %}
+				{% for post in blog_posts %}
+					<div class="blog-post-container">
+						{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}<br>
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="blog-post-container">
+					{% include 'blog/snippets/blog_post_snippet.html' with query=query %}
+				</div>
+    {% endif %}
 <div class="d-flex flex-column">
     <a class="m-auto" href="{% url 'password_change'%}">Change Password</a>
+</div>
 </div>
 {% endblock content %}

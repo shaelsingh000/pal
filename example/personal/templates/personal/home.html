@@ -12,23 +12,30 @@
 
 	@media (min-width: 768px) { 
 		.right-column{
-			margin-left: 20px;
+			margin-left: 0px;
 		}
 	}
 
 	.blog-post-container{
 		margin-bottom: 30px;
 		width: 100%;
-		border: solid 5px;
-		border-color: white;
+		padding:0px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		height: 100vh;
+		
+	}
+	::-webkit-scrollbar{
+		width: 0px;
+		background: transparent;
 	}
 	.create-post-bar{
-		background-color: #fff;
+		background-color: #f2f2f2;
 		margin-bottom:20px;
 	}
 
 	.left-column{
-		padding:0px;
+		padding: 0px;
 	}
 
 	.right-column{
@@ -37,8 +44,11 @@
 	.lead{
 		font-size: 17px;
 	}
+	::-webkit-scrollbar{
+		width: 0px;
+		background: transparent;
+	}
 </style>
-<div class="container">
 	<div class="row">
 
 		<!-- blog feed -->
@@ -48,24 +58,23 @@
 			<div class="d-lg-none mb-3">
 				<div class="card m-auto d-flex flex-column p-3">
 					<p class="lead"><address>Shailendra Singh, Shivam Tiwari, Shivashish Tiwari<br>Feedback At: <a href="mailto:shaelsingh000@gmail.com">shaelsingh000@gmail.com</a><br><br>
-						This project is made under the supervision of Mr.Anshu Batham, Dr. Virendra Swaroop Institute Of Computer Application.</address></p>
+						This project is made under the supervision of Mr.Anshu Batham and Mr. Manish Jain, Dr. Virendra Swaroop Institute Of Computer Application.</address></p>
 					<p class="m-auto"><a class="btn btn-primary" href="{% url 'blog:create' %}">Create post</a></p>
 				</div>
 			</div>
 			<!-- end Top 'create post' bar -->
 
 			<!-- Blog posts-->
+			<div class="blog-post-container">
 			{% if blog_posts %}
 				{% for post in blog_posts %}
-					<div class="blog-post-container">
-						{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}
-					</div>
+				
+						{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}<br>
 				{% endfor %}
 			{% else %}
-				<div class="blog-post-container">
-					{% include 'blog/snippets/blog_post_snippet.html' with query=query %}
-				</div>
+					{% include 'blog/snippets/blog_post_snippet.html' with query=query %}<br>
 			{% endif %}
+			</div>
 			<!-- End Blog posts-->
 		</div>
 		<!-- end blog feed -->
@@ -74,16 +83,14 @@
 		<!-- Right 'create post' column  -->
 		<div class="right-column col-lg-3 d-lg-flex d-none flex-column">
 
-			<div class="card create-post-bar d-flex flex-column p-3">
+			<div class="create-post-bar d-flex flex-column p-4">
 				<p class="lead"><address>Shailendra Singh, Shivam Tiwari, Shivashish Tiwari<br>Feedback At: <a href="mailto:shaelsingh000@gmail.com">shaelsingh000@gmail.com</a><br><br>
-    This project is made under the supervision of Mr.Anshu Batham, Dr. Virendra Swaroop Institute Of Computer Application.</address></p>
+    				This project is made under the supervision of Mr.Anshu Batham and Mr. Manish Jain, Dr. Virendra Swaroop Institute Of Computer Application.</address></p>
 				<p class="m-auto"><a class="btn btn-primary" href="{% url 'blog:create' %}">Create post</a></p>
 			</div>
 		
 		</div>
 		<!-- end Right 'create post' column  -->
-
 	</div>
-</div>
 
 {% endblock content %}

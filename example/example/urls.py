@@ -44,6 +44,9 @@ urlpatterns = [
     path('account/<str:username>/', account_view, name='account'),
     path('user/<str:username>/', other_account_view, name='other_account'),
     url('avatar/', include('avatar.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^messages/', include('postman.urls','messages')),
+
 
 
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), 

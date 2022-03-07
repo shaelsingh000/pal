@@ -8,9 +8,9 @@
     max-width: 330px;
     padding: 15px;
     margin: auto;
-    border: 5px solid white;
+    border: 5px solid rgb(253, 252, 252);
     border-radius: 20px;
-    background-color:#0a0000;
+    background-color:#fdfbfb;
     }
     .form-signin .form-control {
     position: relative;
@@ -24,7 +24,9 @@
         text-align: center;
     }
     .container{
-        height: 100%;
+        height: 80vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
         justify-content: center;
         align-items: center;
     }
@@ -36,31 +38,26 @@
     #user_avatar
     {
         border-radius: 50%;
+        height: 100px;
+        width: 100px;
     }
     h1
     {
-        color: white;
+        color: rgb(7, 0, 0);
     }
     h3#bio{
-        color:white;
+        color:rgb(12, 0, 0);
         text-decoration: underline;
     }
     #inputbio
     {
         font-family: cursive;
     }
-    p
-    {
-        color: white;
-    }
     pre{
         font-size: large;
     }
-    hr{
-        color: white;
-    }
 </style>
-<main class="form-signin-profile">
+<main class="form-signin-profile card">
     <form method="POST">
         {% csrf_token %}
         <center>
@@ -68,25 +65,20 @@
         <h1 class="h3 mb-3 fw-normal">Account</h1>
         <hr>
         <p>{{account_form.username}}<br>
-        {{account_form.email}}</p><hr>
-        <H3 id="bio">BIO:</H3>
+        <a href="mailto:{{account_form.email}}">{{account_form.email}}</a></p><hr>
         <pre><p>{{account_form.bio}}</p></pre><hr>
 </main>
 <hr>
-<div class="container mt-4 p-4">
-    <div class='row'>
-        <div class='blog-posts'>
-            <h3 class="mb-3 font-weight-normal">Blog Posts:</h3>
-            {% if blog_posts %}
-            <ul>
-                {% for post in blog_posts %}
-                    <a href="{% url 'blog:detail' post.slug %}" style="text-decoration: none;">
-                        <li class="list-group-item">{{post}}</li>
-                    </a>
+<h3 class="mb-3 text-center">Blog Posts</h3><hr>
+    {% if blog_posts %}
+				{% for post in blog_posts %}
+					<div class="blog-post-container">
+						{% include 'blog/snippets/blog_post_snippet.html' with blog_post=post %}<br>
+                    </div>
                 {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
-    </div>
-</div>
+			{% else %}
+				<div class="blog-post-container">
+					{% include 'blog/snippets/blog_post_snippet.html' with query=query %}
+				</div>
+    {% endif %}
 {% endblock content %}

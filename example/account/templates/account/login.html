@@ -36,8 +36,10 @@
     <form method="POST">
       {% csrf_token %}
       <h1 class="h3 mb-3 fw-normal">Log In</h1>
-      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      Email<br>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+      Password<br>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required><br>
         {% for field in login_form %}
             <p>
                 {% for error in field.errors %}

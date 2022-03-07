@@ -1,0 +1,1022 @@
+Folder PATH listing for volume OS
+Volume serial number is 10C4-28C8
+C:.
+|   db.sqlite3
+|   manage.py
+|   output.dot
+|   requirement.txt
+|   tree.txt
+|   
++---account
+|   |   admin.py
+|   |   apps.py
+|   |   forms.py
+|   |   models.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   \---__pycache__
+|   +---templates
+|   |   \---account
+|   |           account.html
+|   |           login.html
+|   |           must_authenticate.html
+|   |           other_account.html
+|   |           register.html
+|   |           
+|   \---__pycache__
+|           admin.cpython-38.pyc
+|           forms.cpython-38.pyc
+|           models.cpython-38.pyc
+|           views.cpython-38.pyc
+|           __init__.cpython-38.pyc
+|           
++---blog
+|   |   admin.py
+|   |   apps.py
+|   |   forms.py
+|   |   models.py
+|   |   tests.py
+|   |   urls.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   0002_auto_20210112_1044.py
+|   |   |   0003_auto_20210113_2027.py
+|   |   |   0004_blogpost_likes.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-38.pyc
+|   |           0002_auto_20210112_1044.cpython-38.pyc
+|   |           0003_auto_20210113_2027.cpython-38.pyc
+|   |           0004_blogpost_likes.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |           
+|   +---templates
+|   |   \---blog
+|   |       |   create_blog.html
+|   |       |   detail_blog.html
+|   |       |   edit_blog.html
+|   |       |   
+|   |       \---snippets
+|   |               blog_post_snippet.html
+|   |               
+|   \---__pycache__
+|           admin.cpython-38.pyc
+|           forms.cpython-38.pyc
+|           models.cpython-38.pyc
+|           urls.cpython-38.pyc
+|           views.cpython-38.pyc
+|           __init__.cpython-38.pyc
+|           
++---example
+|   |   asgi.py
+|   |   settings.py
+|   |   urls.py
+|   |   wsgi.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           settings.cpython-38.pyc
+|           urls.cpython-38.pyc
+|           wsgi.cpython-38.pyc
+|           __init__.cpython-38.pyc
+|           
++---media
++---media_cdn
+|   +---avatars
+|   |   +---shailendrasingh150701@gmail.com
+|   |   |   |   99269328_246177030042054_3529167372980039641_n.jpg
+|   |   |   |   IMG-20190704-WA0016.jpg
+|   |   |   |   IMG-20190704-WA0032.jpg
+|   |   |   |   Screenshot_30-10-2020_11_02_42.png
+|   |   |   |   
+|   |   |   \---resized
+|   |   |       \---80
+|   |   |               99269328_246177030042054_3529167372980039641_n.jpg
+|   |   |               IMG-20190704-WA0016.jpg
+|   |   |               IMG-20190704-WA0032.jpg
+|   |   |               
+|   |   +---snehaomer1503@gmail.com
+|   |   |   |   99269328_246177030042054_3529167372980039641_n.jpg
+|   |   |   |   
+|   |   |   \---resized
+|   |   |       \---80
+|   |   |               99269328_246177030042054_3529167372980039641_n.jpg
+|   |   |               
+|   |   \---umagiri747@gmail.com
+|   |       |   99269328_246177030042054_3529167372980039641_n.jpg
+|   |       |   
+|   |       \---resized
+|   |           \---80
+|   |                   99269328_246177030042054_3529167372980039641_n.jpg
+|   |                   
+|   \---blog
+|       +---12
+|       |       hdgsah.cover-12-149726578931767257.jpg
+|       |       hdgsah.IMG_20191223_084812_1000x1000.jpg
+|       |       hdtqwrgyewjh.IMG-20190704-WA0001.jpg
+|       |       Hello.IMG-20190704-WA0029.jpg
+|       |       hey.99269328_246177030042054_3529167372980039641_n.jpg
+|       |       hg.IMG-20190527-WA0017.jpg
+|       |       
+|       +---13
+|       |       gfkftudhd.IMG_20191223_084812_1000x1000.jpg
+|       |       
+|       +---14
+|       |       the_first_blog.IMG-20190527-WA0006.jpg
+|       |       the_first_blog.introduction-to-cybersecurity.png
+|       |       
+|       +---16
+|       |       dtjejtrtyr.IMG-20190704-WA0043.jpg
+|       |       
+|       \---19
+|               oudfgawkjgjlre.cover-12-149726578931767257.jpg
+|               
++---personal
+|   |   admin.py
+|   |   apps.py
+|   |   models.py
+|   |   tests.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   0002_delete_question.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-38.pyc
+|   |           0002_delete_question.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |           
+|   +---templates
+|   |   \---personal
+|   |       |   home.html
+|   |       |   
+|   |       \---snippets
+|   |               body_snippet.html
+|   |               
+|   \---__pycache__
+|           admin.cpython-38.pyc
+|           models.cpython-38.pyc
+|           views.cpython-38.pyc
+|           __init__.cpython-38.pyc
+|           
++---postman
+|   |   admin.py
+|   |   api.py
+|   |   api_urls.py
+|   |   api_views.py
+|   |   apps.py
+|   |   context_processors.py
+|   |   fields.py
+|   |   forms.py
+|   |   models.py
+|   |   module_for_tests.py
+|   |   query.py
+|   |   tests.py
+|   |   urls.py
+|   |   urls_for_tests.py
+|   |   utils.py
+|   |   views.py
+|   |   __init__.py
+|   |   
+|   +---locale
+|   |   +---ar
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---cs
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---da
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---de
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---el
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---en
+|   |   |   \---LC_MESSAGES
+|   |   |           django.po
+|   |   |           
+|   |   +---eo
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---es
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---fa_IR
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---fr
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---hu
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---it
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---ka
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---lv
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---nl
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---pl
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---pt_BR
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---ru
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---sl_SI
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---th_TH
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---tr
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   +---zh_CN
+|   |   |   \---LC_MESSAGES
+|   |   |           django.mo
+|   |   |           django.po
+|   |   |           
+|   |   \---zh_TW
+|   |       \---LC_MESSAGES
+|   |               django.mo
+|   |               django.po
+|   |               
+|   +---management
+|   |   |   __init__.py
+|   |   |   
+|   |   +---commands
+|   |   |       postman_checkup.py
+|   |   |       postman_cleanup.py
+|   |   |       __init__.py
+|   |   |       
+|   |   \---__pycache__
+|   |           __init__.cpython-38.pyc
+|   |           
+|   +---migrations
+|   |   |   0001_initial.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           0001_initial.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |           
+|   +---templates
+|   |   |   autocomplete_postman_multiple_as1-1.html
+|   |   |   autocomplete_postman_multiple_as1-2.html
+|   |   |   autocomplete_postman_multiple_as1-3.html
+|   |   |   autocomplete_postman_single_as1-1.html
+|   |   |   
+|   |   +---admin
+|   |   |   \---postman
+|   |   |       \---pendingmessage
+|   |   |               change_form.html
+|   |   |               submit_line.html
+|   |   |               
+|   |   +---postman
+|   |   |       archives.html
+|   |   |       base.html
+|   |   |       base_folder.html
+|   |   |       base_write.html
+|   |   |       email_user.txt
+|   |   |       email_user_subject.txt
+|   |   |       email_visitor.txt
+|   |   |       email_visitor_subject.txt
+|   |   |       inbox.html
+|   |   |       inc_subject_ex.html
+|   |   |       reply.html
+|   |   |       sent.html
+|   |   |       trash.html
+|   |   |       view.html
+|   |   |       write.html
+|   |   |       
+|   |   \---postman_for_tests
+|   |           context_processors.html
+|   |           email_html_and_empty_txt.html
+|   |           email_html_and_empty_txt.txt
+|   |           email_html_and_txt.html
+|   |           email_html_and_txt.txt
+|   |           email_html_only.html
+|   |           email_txt_only.txt
+|   |           
+|   +---templatetags
+|   |   |   pagination_tags.py
+|   |   |   postman_admin_modify.py
+|   |   |   postman_tags.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           pagination_tags.cpython-38.pyc
+|   |           postman_admin_modify.cpython-38.pyc
+|   |           postman_tags.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |           
+|   \---__pycache__
+|           admin.cpython-38.pyc
+|           api_urls.cpython-38.pyc
+|           api_views.cpython-38.pyc
+|           apps.cpython-38.pyc
+|           fields.cpython-38.pyc
+|           forms.cpython-38.pyc
+|           models.cpython-38.pyc
+|           query.cpython-38.pyc
+|           urls.cpython-38.pyc
+|           utils.cpython-38.pyc
+|           views.cpython-38.pyc
+|           __init__.cpython-38.pyc
+|           
++---static
++---static_cdn
+|   +---admin
+|   |   +---css
+|   |   |   |   autocomplete.css
+|   |   |   |   base.css
+|   |   |   |   changelists.css
+|   |   |   |   dashboard.css
+|   |   |   |   fonts.css
+|   |   |   |   forms.css
+|   |   |   |   login.css
+|   |   |   |   nav_sidebar.css
+|   |   |   |   responsive.css
+|   |   |   |   responsive_rtl.css
+|   |   |   |   rtl.css
+|   |   |   |   widgets.css
+|   |   |   |   
+|   |   |   \---vendor
+|   |   |       \---select2
+|   |   |               LICENSE-SELECT2.md
+|   |   |               select2.css
+|   |   |               select2.min.css
+|   |   |               
+|   |   +---fonts
+|   |   |       LICENSE.txt
+|   |   |       README.txt
+|   |   |       Roboto-Bold-webfont.woff
+|   |   |       Roboto-Light-webfont.woff
+|   |   |       Roboto-Regular-webfont.woff
+|   |   |       
+|   |   +---img
+|   |   |   |   calendar-icons.svg
+|   |   |   |   icon-addlink.svg
+|   |   |   |   icon-alert.svg
+|   |   |   |   icon-calendar.svg
+|   |   |   |   icon-changelink.svg
+|   |   |   |   icon-clock.svg
+|   |   |   |   icon-deletelink.svg
+|   |   |   |   icon-no.svg
+|   |   |   |   icon-unknown-alt.svg
+|   |   |   |   icon-unknown.svg
+|   |   |   |   icon-viewlink.svg
+|   |   |   |   icon-yes.svg
+|   |   |   |   inline-delete.svg
+|   |   |   |   LICENSE
+|   |   |   |   README.txt
+|   |   |   |   search.svg
+|   |   |   |   selector-icons.svg
+|   |   |   |   sorting-icons.svg
+|   |   |   |   tooltag-add.svg
+|   |   |   |   tooltag-arrowright.svg
+|   |   |   |   
+|   |   |   \---gis
+|   |   |           move_vertex_off.svg
+|   |   |           move_vertex_on.svg
+|   |   |           
+|   |   \---js
+|   |       |   actions.js
+|   |       |   actions.min.js
+|   |       |   autocomplete.js
+|   |       |   calendar.js
+|   |       |   cancel.js
+|   |       |   change_form.js
+|   |       |   collapse.js
+|   |       |   collapse.min.js
+|   |       |   core.js
+|   |       |   inlines.js
+|   |       |   inlines.min.js
+|   |       |   jquery.init.js
+|   |       |   nav_sidebar.js
+|   |       |   popup_response.js
+|   |       |   prepopulate.js
+|   |       |   prepopulate.min.js
+|   |       |   prepopulate_init.js
+|   |       |   SelectBox.js
+|   |       |   SelectFilter2.js
+|   |       |   urlify.js
+|   |       |   
+|   |       +---admin
+|   |       |       DateTimeShortcuts.js
+|   |       |       RelatedObjectLookups.js
+|   |       |       
+|   |       \---vendor
+|   |           +---jquery
+|   |           |       jquery.js
+|   |           |       jquery.min.js
+|   |           |       LICENSE.txt
+|   |           |       
+|   |           +---select2
+|   |           |   |   LICENSE.md
+|   |           |   |   select2.full.js
+|   |           |   |   select2.full.min.js
+|   |           |   |   
+|   |           |   \---i18n
+|   |           |           af.js
+|   |           |           ar.js
+|   |           |           az.js
+|   |           |           bg.js
+|   |           |           bn.js
+|   |           |           bs.js
+|   |           |           ca.js
+|   |           |           cs.js
+|   |           |           da.js
+|   |           |           de.js
+|   |           |           dsb.js
+|   |           |           el.js
+|   |           |           en.js
+|   |           |           es.js
+|   |           |           et.js
+|   |           |           eu.js
+|   |           |           fa.js
+|   |           |           fi.js
+|   |           |           fr.js
+|   |           |           gl.js
+|   |           |           he.js
+|   |           |           hi.js
+|   |           |           hr.js
+|   |           |           hsb.js
+|   |           |           hu.js
+|   |           |           hy.js
+|   |           |           id.js
+|   |           |           is.js
+|   |           |           it.js
+|   |           |           ja.js
+|   |           |           ka.js
+|   |           |           km.js
+|   |           |           ko.js
+|   |           |           lt.js
+|   |           |           lv.js
+|   |           |           mk.js
+|   |           |           ms.js
+|   |           |           nb.js
+|   |           |           ne.js
+|   |           |           nl.js
+|   |           |           pl.js
+|   |           |           ps.js
+|   |           |           pt-BR.js
+|   |           |           pt.js
+|   |           |           ro.js
+|   |           |           ru.js
+|   |           |           sk.js
+|   |           |           sl.js
+|   |           |           sq.js
+|   |           |           sr-Cyrl.js
+|   |           |           sr.js
+|   |           |           sv.js
+|   |           |           th.js
+|   |           |           tk.js
+|   |           |           tr.js
+|   |           |           uk.js
+|   |           |           vi.js
+|   |           |           zh-CN.js
+|   |           |           zh-TW.js
+|   |           |           
+|   |           \---xregexp
+|   |                   LICENSE.txt
+|   |                   xregexp.js
+|   |                   xregexp.min.js
+|   |                   
+|   +---django_extensions
+|   |   +---css
+|   |   |       jquery.autocomplete.css
+|   |   |       
+|   |   +---img
+|   |   |       indicator.gif
+|   |   |       
+|   |   \---js
+|   |           jquery.ajaxQueue.js
+|   |           jquery.autocomplete.js
+|   |           jquery.bgiframe.js
+|   |           
+|   +---django_tinymce
+|   |       init_tinymce.js
+|   |       
+|   +---postman
+|   |   \---css
+|   |           admin.css
+|   |           postman.css
+|   |           
+|   \---tinymce
+|       |   CHANGELOG.md
+|       |   jquery.tinymce.min.js
+|       |   license.txt
+|       |   tinymce.min.js
+|       |   
+|       +---icons
+|       |   \---default
+|       |           icons.min.js
+|       |           
+|       +---js
+|       |   \---tinymce
+|       |       |   jquery.tinymce.min.js
+|       |       |   license.txt
+|       |       |   tinymce.d.ts
+|       |       |   tinymce.min.js
+|       |       |   
+|       |       +---icons
+|       |       |   \---default
+|       |       |           icons.min.js
+|       |       |           
+|       |       +---langs
+|       |       |       README.md
+|       |       |       
+|       |       +---plugins
+|       |       |   +---advlist
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---anchor
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---autolink
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---autoresize
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---autosave
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---bbcode
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---charmap
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---code
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---codesample
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---colorpicker
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---contextmenu
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---directionality
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---emoticons
+|       |       |   |   |   plugin.min.js
+|       |       |   |   |   
+|       |       |   |   \---js
+|       |       |   |           emojiimages.js
+|       |       |   |           emojiimages.min.js
+|       |       |   |           emojis.js
+|       |       |   |           emojis.min.js
+|       |       |   |           
+|       |       |   +---fullpage
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---fullscreen
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---help
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---hr
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---image
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---imagetools
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---importcss
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---insertdatetime
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---legacyoutput
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---link
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---lists
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---media
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---nonbreaking
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---noneditable
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---pagebreak
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---paste
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---preview
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---print
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---quickbars
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---save
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---searchreplace
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---spellchecker
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---tabfocus
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---table
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---template
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---textcolor
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---textpattern
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---toc
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---visualblocks
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   +---visualchars
+|       |       |   |       plugin.min.js
+|       |       |   |       
+|       |       |   \---wordcount
+|       |       |           plugin.min.js
+|       |       |           
+|       |       +---skins
+|       |       |   +---content
+|       |       |   |   +---dark
+|       |       |   |   |       content.min.css
+|       |       |   |   |       
+|       |       |   |   +---default
+|       |       |   |   |       content.min.css
+|       |       |   |   |       
+|       |       |   |   +---document
+|       |       |   |   |       content.min.css
+|       |       |   |   |       
+|       |       |   |   \---writer
+|       |       |   |           content.min.css
+|       |       |   |           
+|       |       |   \---ui
+|       |       |       +---oxide
+|       |       |       |   |   content.inline.min.css
+|       |       |       |   |   content.min.css
+|       |       |       |   |   content.mobile.min.css
+|       |       |       |   |   skin.min.css
+|       |       |       |   |   skin.mobile.min.css
+|       |       |       |   |   skin.shadowdom.min.css
+|       |       |       |   |   
+|       |       |       |   \---fonts
+|       |       |       |           tinymce-mobile.woff
+|       |       |       |           
+|       |       |       \---oxide-dark
+|       |       |           |   content.inline.min.css
+|       |       |           |   content.min.css
+|       |       |           |   content.mobile.min.css
+|       |       |           |   skin.min.css
+|       |       |           |   skin.mobile.min.css
+|       |       |           |   skin.shadowdom.min.css
+|       |       |           |   
+|       |       |           \---fonts
+|       |       |                   tinymce-mobile.woff
+|       |       |                   
+|       |       \---themes
+|       |           +---mobile
+|       |           |       theme.min.js
+|       |           |       
+|       |           \---silver
+|       |                   theme.min.js
+|       |                   
+|       +---langs
+|       |       ar.js
+|       |       bg_BG.js
+|       |       ca.js
+|       |       cs.js
+|       |       cy.js
+|       |       da.js
+|       |       de.js
+|       |       es.js
+|       |       es_ES.js
+|       |       es_MX.js
+|       |       eu.js
+|       |       fa.js
+|       |       fa_IR.js
+|       |       fi.js
+|       |       fr_FR.js
+|       |       gl.js
+|       |       he_IL.js
+|       |       hr.js
+|       |       hu_HU.js
+|       |       id.js
+|       |       it.js
+|       |       it_IT.js
+|       |       ja.js
+|       |       kk.js
+|       |       ko_KR.js
+|       |       lt.js
+|       |       nb_NO.js
+|       |       nl.js
+|       |       pl.js
+|       |       pt_BR.js
+|       |       pt_PT.js
+|       |       readme.md
+|       |       ro.js
+|       |       ro_RO.js
+|       |       ru.js
+|       |       sk.js
+|       |       sl.js
+|       |       sl_SI.js
+|       |       sv_SE.js
+|       |       ta.js
+|       |       ta_IN.js
+|       |       th_TH.js
+|       |       tr.js
+|       |       tr_TR.js
+|       |       uk.js
+|       |       zh_CN.js
+|       |       zh_TW.js
+|       |       
+|       +---plugins
+|       |   +---advlist
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---anchor
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---autolink
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---autoresize
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---autosave
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---bbcode
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---charmap
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---code
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---codesample
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---colorpicker
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---contextmenu
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---directionality
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---emoticons
+|       |   |   |   plugin.min.js
+|       |   |   |   
+|       |   |   \---js
+|       |   |           emojis.js
+|       |   |           emojis.min.js
+|       |   |           
+|       |   +---fullpage
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---fullscreen
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---help
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---hr
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---image
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---imagetools
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---importcss
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---insertdatetime
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---legacyoutput
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---link
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---lists
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---media
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---nonbreaking
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---noneditable
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---pagebreak
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---paste
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---preview
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---print
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---quickbars
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---save
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---searchreplace
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---spellchecker
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---tabfocus
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---table
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---template
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---textcolor
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---textpattern
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---toc
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---visualblocks
+|       |   |       plugin.min.js
+|       |   |       
+|       |   +---visualchars
+|       |   |       plugin.min.js
+|       |   |       
+|       |   \---wordcount
+|       |           plugin.min.js
+|       |           
+|       +---skins
+|       |   +---content
+|       |   |   +---dark
+|       |   |   |       content.min.css
+|       |   |   |       
+|       |   |   +---default
+|       |   |   |       content.min.css
+|       |   |   |       
+|       |   |   +---document
+|       |   |   |       content.min.css
+|       |   |   |       
+|       |   |   \---writer
+|       |   |           content.min.css
+|       |   |           
+|       |   \---ui
+|       |       +---oxide
+|       |       |   |   content.inline.min.css
+|       |       |   |   content.min.css
+|       |       |   |   content.mobile.min.css
+|       |       |   |   skin.min.css
+|       |       |   |   skin.mobile.min.css
+|       |       |   |   
+|       |       |   \---fonts
+|       |       |           tinymce-mobile.woff
+|       |       |           
+|       |       \---oxide-dark
+|       |           |   content.inline.min.css
+|       |           |   content.min.css
+|       |           |   content.mobile.min.css
+|       |           |   skin.min.css
+|       |           |   skin.mobile.min.css
+|       |           |   
+|       |           \---fonts
+|       |                   tinymce-mobile.woff
+|       |                   
+|       \---themes
+|           +---mobile
+|           |       theme.min.js
+|           |       
+|           \---silver
+|                   theme.min.js
+|                   
+\---templates
+    |   base.html
+    |   game.html
+    |   
+    +---registration
+    |       password_change.html
+    |       password_change_done.html
+    |       password_reset_complete.html
+    |       password_reset_done.html
+    |       password_reset_email.html
+    |       password_reset_form.html
+    |       password_reset_subject.txt
+    |       
+    \---snippets
+            base_css.html
+            bluedot.jpg
+            footer.html
+            header.html
+            tinymce.html
+            
