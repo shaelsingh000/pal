@@ -31,6 +31,7 @@ from account.views import (
     account_view,
     other_account_view,
     must_authenticate_view,
+    delete,
 )
 
 urlpatterns = [
@@ -46,6 +47,7 @@ urlpatterns = [
     url('avatar/', include('avatar.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^messages/', include('postman.urls','messages')),
+    path('account/delete', delete, name='delete'),
 
 
 

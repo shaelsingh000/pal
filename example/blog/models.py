@@ -30,6 +30,9 @@ class BlogPost(models.Model):
         return self.likes.count()
     def __str__(self):
         return self.title
+    @property
+    def number_of_comments(self):
+        return comment.objects.filter(post=self).count()
 
 @receiver(post_delete,sender=BlogPost)
 def submission_delete(sender, instance, **kwargs):
@@ -40,3 +43,12 @@ def pre_save_blog_post_receiver(sender,instance, **kwargs):
         instance.slug = slugify(instance.author.username+ "-" +instance.title)
 
 pre_save.connect(pre_save_blog_post_receiver, sender= BlogPost)
+
+class comment(models.Model):
+    post                = models.ForeignKey(BlogPost,related_name="comments", on_delete=models.CASCADE)
+    body                = models.TextField(max_length=250)
+    date_published      = models.DateTimeField(auto_now_add=True, verbose_name="date published")
+    author              = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '%s-%s' %(self.post.title,self.author)

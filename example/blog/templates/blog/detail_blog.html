@@ -40,23 +40,60 @@
 			</div>
 			<div class="card-footer text-muted">
 				<a class='post_links' href="{% url 'other_account' blog_post.author.username %}">{% avatar blog_post.author.email class="image-circle" id="user_avatar"%}{{blog_post.author.username}}</a><br>
-			  Posted on {{blog_post.date_published}} and Updated on {{blog_post.date_updated}}
-			</div>
+			  Posted on {{blog_post.date_published}} and Updated on {{blog_post.date_updated}}<br>
+			  {{blog_post.number_of_likes}}
+		</div>
 			<div class="card">
+				
 				{% if user.is_authenticated %}
-					<form action="{% url 'blog:blogpost_like' blog_post.slug %}" method="POST">
+					<form action="{% url 'blog:detail' blog_post.slug %}" method="POST">
 						{% csrf_token %}
 
 						{% if post_is_liked %}
-							<button class="borderless" type="submit" name="blogpost_id" value="{{object.username}}"><i class="icon mdi mdi-heart" style='font-size:24px;color:rgb(255, 230, 0);'></i></button>
+							<button type="submit" name="blogpost_id" value="{{object.username}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+							  </svg></button>
 						{% else %}
-							<button class="borderless" type="submit" name="blogpost_id" value="{{object.username}}"><i class="icon mdi mdi-heart" style='font-size:24px; color: black'></i></button>
+							<button type="submit" name="blogpost_id" value="{{object.username}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+								<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+							  </svg></button>
 						{% endif %}
 					</form>
 				{% else %}
 						<a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}">Log in to like this article!</a>
 				{% endif %}
-					<strong class="text-secondary">{{ number_of_likes }} Like{{ number_of_likes|pluralize }}</strong>
+				<strong class="text-secondary">{{ number_of_likes }} Like </strong>
+			</div>
+			<div class="card">
+				<h5>Comments......</h5>
+				<hr>
+				<div class="row">
+					<div class="col-lg-7 offset-lg-1">
+						<form method="POST">{% csrf_token %}
+							<!-- Body -->
+							<div class="form-group">
+								<strong><label for="id_body">New Comment</label></strong>
+								<textarea class="form-control" rows="1" type="text" name="body" required></textarea>
+							</div><br>
+							<!-- Submit btn -->
+							<button class="submit-button btn btn-sm btn-primary" type="submit">Add Comment</button>
+						</form>	
+						<hr>
+					</div>
+				</div>
+				{%if not blog_post.comments.all%}
+					No comments Yet.....
+				{%else%}
+					{% for comment in blog_post.comments.all%}
+					<strong>{% avatar comment.author.email class="image-circle" id="user_avatar"%}{{comment.author.username}}</strong>
+					<p>{{comment.body}}-<sub>{{comment.date_published}}</sub></p>
+					
+					<hr>
+					{%endfor%}
+					
+				{%endif%}
+						
+				
 			</div>
 		</div>
 

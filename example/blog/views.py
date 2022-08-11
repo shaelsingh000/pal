@@ -1,27 +1,14 @@
+from xml.etree.ElementTree import Comment
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.http import HttpResponse
 from .models import BlogPost
-from .forms import CreateBlogPostForm, UpdateBlogPostForm
+from .forms import CreateBlogPostForm, UpdateBlogPostForm,NewCommentForm
 from account.models import Account
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-def BlogPostLike(request, slug):
 
-	context = {}
-	blog_post = get_object_or_404(BlogPost, slug=slug)  
-	liked = False  
-	if blog_post.likes.filter(username=request.user.username).exists():
-		blog_post.likes.remove(request.user)
-	else:
-		blog_post.likes.add(request.user)
-	if blog_post.likes.filter(username=request.user.username).exists():
-		liked = True
-	
-	context={'blog_post': blog_post,'number_of_likes':blog_post.number_of_likes(), 'post_is_liked':liked}
-
-	return render(request, 'blog/detail_blog.html', context)
 def create_blog_view(request):
 
 	context = {}
@@ -46,11 +33,35 @@ def create_blog_view(request):
 
 
 def detail_blog_view(request, slug):
-
+	
 	context = {}
 	blog_post = get_object_or_404(BlogPost, slug=slug)
-	context['blog_post'] = blog_post
+	liked=False
+	if request.method == 'POST':
+		
+		if blog_post.likes.filter(username=request.user.username).exists():
+			blog_post.likes.remove(request.user)
+		else:
+			blog_post.likes.add(request.user)
+		
+		form = NewCommentForm(request.POST or None)
+		if form.is_valid():
+			obj = form.save(commit=False)
+			author = Account.objects.filter(email =request.user.email).first()
+			obj.author = author
+			obj.post=blog_post
+			form = NewCommentForm()
+			obj.save()
+		
+		return HttpResponseRedirect(request.path)
+		
+	if blog_post.likes.filter(username=request.user.username).exists():
+		liked = True
+
+	context={'blog_post': blog_post,'number_of_likes':blog_post.number_of_likes(), 'post_is_liked':liked}
+
 	return render(request, 'blog/detail_blog.html', context)
+	
 	
 
 
@@ -102,4 +113,5 @@ def get_blog_queryset(query=None):
 			queryset.append(post)
 
 	return list(set(queryset)) 
+
 

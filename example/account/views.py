@@ -97,3 +97,11 @@ def other_account_view(request, *args, **kwargs):
     context['blog_posts'] = blog_posts
 
     return render(request, 'account/other_account.html',context)
+
+def delete(request,*args):
+    if not request.user.is_authenticated:
+        return redirect("login")
+    
+    reg=Account.objects.get(username=request.user.username)
+    reg.delete()
+    return render(request,'account/must_authenticate.html',{})

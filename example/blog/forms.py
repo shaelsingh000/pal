@@ -1,11 +1,17 @@
 from django import forms
-from .models import BlogPost
+from .models import BlogPost,comment
 
 class CreateBlogPostForm(forms.ModelForm):
 
 	class Meta:
 		model = BlogPost
 		fields = ['title', 'body', 'image']
+
+class NewCommentForm(forms.ModelForm):
+
+	class Meta:
+		model = comment
+		fields = ['body']
 
 class UpdateBlogPostForm(forms.ModelForm):
 	class Meta:
